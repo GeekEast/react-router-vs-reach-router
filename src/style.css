@@ -1,0 +1,15 @@
+ul {
+    overflow: hidden;
+    width: 40%;
+    margin: 0 auto;
+}
+li {
+    float: left;
+    list-style: none;
+    padding: 10px 20px;
+}
+
+* {
+    text-align: center;;
+}
+
