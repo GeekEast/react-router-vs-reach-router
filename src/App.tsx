@@ -12,7 +12,7 @@ const Dash = (props: RouteComponentProps<any>) => (
   <Fragment>
     <Router>
       <Dashboard path="/"></Dashboard>
-      {/* <Invoices path="invoices" redirect={true}></Invoices> */}
+      <Invoices path="invoices" redirect={true}></Invoices>
       <Invoices path="invoices"></Invoices>
       <Team path="team"></Team>
       <Error default></Error>
@@ -21,9 +21,9 @@ const Dash = (props: RouteComponentProps<any>) => (
 );
 const Dashboard = (props: RouteComponentProps<any>) => <h1>Dashboard</h1>;
 const Invoices = (props: RouteComponentProps<any>) => {
-  // if (props.redirect){
-  //   return <Redirect to="/" noThrow></Redirect>
-  // }
+  if (props.redirect){
+    return <Redirect to="/" noThrow></Redirect>
+  }
   return <h1>Invoices</h1>;
 };
 const Team = (props: RouteComponentProps<any>) => {
