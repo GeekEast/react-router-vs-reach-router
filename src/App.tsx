@@ -1,25 +1,29 @@
 import React from 'react';
 import { Router, RouteComponentProps, Link } from '@reach/router';
 
-let Home = (props: RouteComponentProps<any>) => {
-  return (
-    <div>
-      <h1>Home</h1>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="dashboard">Dashboard</Link>
-      </nav>
-    </div>
-  )
+const Home = (props: RouteComponentProps<any>) => <h1>Home</h1>
+const Dash = (props: RouteComponentProps<any>) => <h1>Dash</h1>;
+const Invoice = (props: RouteComponentProps<any>) => {
+  return <h1>Invoice {props.id}</h1>;
 };
-let Dash = (props: RouteComponentProps<any>) => <div>Dash</div>;
 
 const App = () => {
   return (
-    <Router>
-      <Home path="/"></Home>
-      <Dash path="/dashboard"></Dash>
-    </Router>
+    <div>
+      {/* will be showed on every page */}
+      <nav> 
+        <Link to="/">Home</Link>
+        <Link to="dashboard">Dashboard</Link>
+        <Link to="invoice/4">Invoice 4</Link>
+        <Link to="invoice/5">Invoice 5</Link>
+        <Link to="invoice/6">Invoice 6</Link>
+      </nav>
+      <Router>
+        <Home path="/"></Home>
+        <Dash path="dashboard"></Dash>
+        <Invoice path="invoice/:id"></Invoice>
+      </Router>
+    </div>
   );
 };
 
