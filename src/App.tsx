@@ -1,10 +1,11 @@
 import React from 'react';
-import { Router, RouteComponentProps, Link } from '@reach/router';
+import { Router, RouteComponentProps, Link, useParams } from '@reach/router';
 
 const Home = (props: RouteComponentProps<any>) => <h1>Home</h1>
 const Dash = (props: RouteComponentProps<any>) => <h1>Dash</h1>;
 const Invoice = (props: RouteComponentProps<any>) => {
-  return <h1>Invoice {props.id}</h1>;
+  const params = useParams();
+  return <h1>Invoice {params.id}</h1>;
 };
 
 const App = () => {
