@@ -77,6 +77,7 @@ const Team = (props: RouteComponentProps<any>) => {
 ```
 
 #### Redirect
+> Please use `noThrow` for some reason
 - from `localhost:1111/dash` to `localhost:111/dash/dashboard` in `Router`
 ```javascript
 <Router>
@@ -92,7 +93,15 @@ const Team = (props: RouteComponentProps<any>) => {
 ```
 - from anywhere in code outside `Router`
 ```javascript
+ <Invoices path="invoices" redirect={true}></Invoices>
 
+
+const Invoices = (props: RouteComponentProps<any>) => {
+  if (props.redirect){
+    return <Redirect to="/" noThrow></Redirect>
+  }
+  return <h1>Invoices</h1>;
+};
 ```
 
 ### Commits
