@@ -30,3 +30,20 @@ const Dashboard = (props: RouteComponentProps<any>) => {
 </Router>
 ```
 > using @reach/router nested router is just like using normal nested components in React
+
+#### Default Router for 404
+- You have to set it for **each level** of Routers
+```javascript
+      <Router>
+        <Home path="/"></Home>
+        <Dash path="dashboard">
+          <Dashboard path="/"></Dashboard>
+          <Invoices path="invoices"></Invoices>
+          <Team path="team"></Team>
+          {/* Dash Level */}
+          <Error default></Error>
+        </Dash>
+        {/* Rourter Level  */}
+        <Error default></Error>
+      </Router>
+```

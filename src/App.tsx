@@ -16,6 +16,7 @@ const Invoice = (props: RouteComponentProps<any>) => {
   const params = useParams();
   return <h1>Invoice {params.id}</h1>;
 };
+const Error = (props: RouteComponentProps<any>) => <h1>404 Page Not Found</h1>
 
 const App = () => {
   return (
@@ -34,7 +35,10 @@ const App = () => {
           <Dashboard path="/"></Dashboard>
           <Invoices path="invoices"></Invoices>
           <Team path="team"></Team>
+          {/* you have to use Default Router again here */}
+          <Error default></Error>
         </Dash>
+        <Error default></Error>
       </Router>
     </div>
   );
