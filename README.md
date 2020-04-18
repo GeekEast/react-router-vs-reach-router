@@ -121,3 +121,5 @@ const Invoices = (props: RouteComponentProps<any>) => {
   - [programatically navigate without hooks](https://github.com/GeekEast/react-router-vs-reach-router/commit/f7690e1f014e1d080c450e7e1daf025625733d67)
   - [programatically navigate with hooks](https://github.com/GeekEast/react-router-vs-reach-router/commit/4e860fbad60abafdc7e1037f70e7d919c928c362)
   - [you can use await before navigate()](https://github.com/GeekEast/react-router-vs-reach-router/commit/ebdec787e8cdc1d794d2b339639068d648e0311a)
+  - [add redirection within Router](https://github.com/GeekEast/router-libs-in-react/commit/acbdf6d4fb54af933548b3afaa2ac2b1f92ae66f)
+  - [add redirection outside Router](https://github.com/GeekEast/router-libs-in-react/commit/217b17e4a80f3e020bcf52b9d9408efdcb479f92)
