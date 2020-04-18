@@ -7,9 +7,11 @@ yarn add --dev @types/react-router-dom @types/reach__router
 
 ### Reach Router
 - by default: `exact`
+
+
 #### Nested Router
-- nested **component** with `childern`
-> withouth nested components, no chilredn components will be displayed
+> I prefer the 2nd method
+- Method 1: Put nested routers **outside** parent component with `children` keyword
 ```javascript
 const Dashboard = (props: RouteComponentProps<any>) => {
     const { children } = props;
@@ -19,22 +21,34 @@ const Dashboard = (props: RouteComponentProps<any>) => {
         { children }
     )
 }
-```
-- nested **routers**
-```javascript
+
 <Router>
-    <Dashboard>
+    <Dashboard path="dashboard">
           <Invoices path="invoices"></Invoices>
           <Team path="team"></Team>
     </Dashboard>
 </Router>
 ```
-> using @reach/router nested router is just like using normal nested components in React
+- Method 2: Put nested routers **inside** parent component with `/*` keyword
+```javascript
+const Dashboard = (props: RouteComponentProps<any>) => {
+    return (
+        <h1>Dash</h1>
+        <Router>
+          <Invoices path="invoices"></Invoices>
+          <Team path="team"></Team>
+        </Router>
+    )
+}
+<Router>
+    <Dashboard path="dashboard/*"></Dashboard>
+</Router>
+```
 
 #### Default Router for 404
 - You have to set it for **each level** of Routers
 ```javascript
-    <Router>
+<Router>
     <Home path="/"></Home>
     <Dash path="dashboard">
         <Dashboard path="/"></Dashboard>
@@ -45,5 +59,5 @@ const Dashboard = (props: RouteComponentProps<any>) => {
     </Dash>
     {/* Rourter Level  */}
     <Error default></Error>
-    </Router>
+</Router>
 ```
