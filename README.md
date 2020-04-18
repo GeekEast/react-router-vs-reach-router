@@ -29,3 +29,4 @@ const Dashboard = (props: RouteComponentProps<any>) => {
     </Dashboard>
 </Router>
 ```
+> using @reach/router nested router is just like using normal nested components in React

@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Router, RouteComponentProps, Link, useParams } from '@reach/router';
 
 const Home = (props: RouteComponentProps<any>) => <h1>Home</h1>;
-const Dash = (props: RouteComponentProps<any>) => {
-  return (
-    <div>
-      <h1>Dash</h1>
-      {props.children}
-    </div>
-  );
-};
+const Dash = (props: RouteComponentProps<any>) => (
+  <Fragment>
+    {/* this will be showed on every children page */}
+    <h1>Dash</h1>
+    {props.children}
+  </Fragment>
+);
+const Dashboard = (props: RouteComponentProps<any>) => <h1>Dashboard</h1>;
 const Invoices = (props: RouteComponentProps<any>) => <h1>Invoices</h1>;
 const Team = (props: RouteComponentProps<any>) => <h1>Team</h1>;
 const Invoice = (props: RouteComponentProps<any>) => {
@@ -20,7 +20,7 @@ const Invoice = (props: RouteComponentProps<any>) => {
 const App = () => {
   return (
     <div>
-      {/* will be showed on every page */}
+      {/* nav will be showed on every page */}
       <nav>
         <Link to="/">Home</Link>
         <Link to="dashboard">Dashboard</Link>
@@ -30,6 +30,8 @@ const App = () => {
       <Router>
         <Home path="/"></Home>
         <Dash path="dashboard">
+          {/* this will only be showed in the exact /dashboard page, not showed in other children pages */}
+          {/* <Dashboard path="/"></Dashboard> */}
           <Invoices path="invoices"></Invoices>
           <Team path="team"></Team>
         </Dash>
