@@ -34,16 +34,16 @@ const Dashboard = (props: RouteComponentProps<any>) => {
 #### Default Router for 404
 - You have to set it for **each level** of Routers
 ```javascript
-      <Router>
-        <Home path="/"></Home>
-        <Dash path="dashboard">
-          <Dashboard path="/"></Dashboard>
-          <Invoices path="invoices"></Invoices>
-          <Team path="team"></Team>
-          {/* Dash Level */}
-          <Error default></Error>
-        </Dash>
-        {/* Rourter Level  */}
+    <Router>
+    <Home path="/"></Home>
+    <Dash path="dashboard">
+        <Dashboard path="/"></Dashboard>
+        <Invoices path="invoices"></Invoices>
+        <Team path="team"></Team>
+        {/* Dash Level */}
         <Error default></Error>
-      </Router>
+    </Dash>
+    {/* Rourter Level  */}
+    <Error default></Error>
+    </Router>
 ```

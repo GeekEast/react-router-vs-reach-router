@@ -12,6 +12,10 @@ const Dash = (props: RouteComponentProps<any>) => (
 const Dashboard = (props: RouteComponentProps<any>) => <h1>Dashboard</h1>;
 const Invoices = (props: RouteComponentProps<any>) => <h1>Invoices</h1>;
 const Team = (props: RouteComponentProps<any>) => <h1>Team</h1>;
+
+const HomeNav = (props: RouteComponentProps<any>) => <h1>Home Navigation</h1>
+const DashboardNav = (props: RouteComponentProps<any>) => <h1>Dashboard Navigation</h1>
+
 const Invoice = (props: RouteComponentProps<any>) => {
   const params = useParams();
   return <h1>Invoice {params.id}</h1>;
@@ -28,6 +32,13 @@ const App = () => {
         <Link to="dashboard/invoices">Invoices</Link>
         <Link to="dashboard/team">Team</Link>
       </nav>
+
+      <div>
+        <Router>
+          <HomeNav path="/"></HomeNav>
+          <Dashboard path="/dashbaord"></Dashboard>
+        </Router>
+      </div>
       <Router>
         <Home path="/"></Home>
         <Dash path="dashboard">
