@@ -76,6 +76,25 @@ const Team = (props: RouteComponentProps<any>) => {
 };
 ```
 
+#### Redirect
+- from `localhost:1111/dash` to `localhost:111/dash/dashboard` in `Router`
+```javascript
+<Router>
+  <Redirect from="/dash" to="dashboard" noThrow></Redirect>
+</Router>
+```
+- from `localost:1111/dash` to `localhost:1111/dashboard` in `Router`
+
+```javascript
+<Router>
+  <Redirect from="/dash" to="../dashboard" noThrow></Redirect>
+</Router>
+```
+- from anywhere in code outside `Router`
+```javascript
+
+```
+
 ### Commits
 - [React Router](https://github.com/GeekEast/react-router-vs-reach-router/commit/1f8f7a71a6a7fd535d045bd0db0088e53e77e85c)
 - Reach Router
