@@ -2,7 +2,14 @@ import React from 'react';
 import { Router, RouteComponentProps, Link, useParams } from '@reach/router';
 
 const Home = (props: RouteComponentProps<any>) => <h1>Home</h1>;
-const Dash = (props: RouteComponentProps<any>) => <h1>Dash</h1>;
+const Dash = (props: RouteComponentProps<any>) => {
+  return (
+    <div>
+      <h1>Dash</h1>
+      {props.children}
+    </div>
+  );
+};
 const Invoices = (props: RouteComponentProps<any>) => <h1>Invoices</h1>;
 const Team = (props: RouteComponentProps<any>) => <h1>Team</h1>;
 const Invoice = (props: RouteComponentProps<any>) => {
