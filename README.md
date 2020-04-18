@@ -61,3 +61,17 @@ const Dashboard = (props: RouteComponentProps<any>) => {
     <Error default></Error>
 </Router>
 ```
+
+#### Programatically Navigate
+- navigate returns a **promise**, you can use `await`
+```javascript
+const Team = (props: RouteComponentProps<any>) => {
+  const navigate = useNavigate();
+  const onBtnClick = () => navigate('/');
+  return (
+    <div>
+      <h1>Team</h1><button onClick={onBtnClick}>Go back to Home</button>
+    </div>
+  );
+};
+```
