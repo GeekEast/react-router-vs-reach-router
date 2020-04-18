@@ -5,7 +5,7 @@ const Home = (props: RouteComponentProps<any>) => <h1>Home</h1>;
 const Dash = (props: RouteComponentProps<any>) => (
   <Fragment>
     {/* this will be showed on every children page */}
-    <h1>Dash</h1>
+    {/* <h1>Dash</h1> */}
     {props.children}
   </Fragment>
 );
@@ -31,7 +31,7 @@ const App = () => {
         <Home path="/"></Home>
         <Dash path="dashboard">
           {/* this will only be showed in the exact /dashboard page, not showed in other children pages */}
-          {/* <Dashboard path="/"></Dashboard> */}
+          <Dashboard path="/"></Dashboard>
           <Invoices path="invoices"></Invoices>
           <Team path="team"></Team>
         </Dash>
