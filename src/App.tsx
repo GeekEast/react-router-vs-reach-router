@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Router, RouteComponentProps, Link } from '@reach/router';
+import { Router, RouteComponentProps, Link, useNavigate } from '@reach/router';
 
 const Home = (props: RouteComponentProps<any>) => <h1>Home</h1>;
 const Dash = (props: RouteComponentProps<any>) => (
@@ -15,8 +15,8 @@ const Dash = (props: RouteComponentProps<any>) => (
 const Dashboard = (props: RouteComponentProps<any>) => <h1>Dashboard</h1>;
 const Invoices = (props: RouteComponentProps<any>) => <h1>Invoices</h1>;
 const Team = (props: RouteComponentProps<any>) => {
-  const { navigate } = props;
-  const onBtnClick = () => navigate!('/');
+  const navigate = useNavigate();
+  const onBtnClick = () => navigate('/');
   return (
     <div>
       <h1>Team</h1><button onClick={onBtnClick}>Go back to Home</button>
